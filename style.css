@@ -10,4 +10,25 @@ html {
 
 body {
     height: 100%;
+    font-size: 18px;
 }
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.wrapper {
+    & #qStats {
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            font-size: 1.5rem;
+
+        }
+    }
+
+    
+}
+
