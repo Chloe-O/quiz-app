@@ -56,8 +56,9 @@ const answerContainer = document.getElementById("qOptions");
 const quizTitle = document.getElementById("qTitle");
 const questionID = document.getElementById("qID");
 const quizScore = document.getElementById("qScore");
+const optionBtn = document.getElementsByClassName("option-btn");
 
-let score = 100;
+let score = 0;
 
 quizScore.innerText = score;
 
@@ -65,19 +66,6 @@ function iterateQuestions() {
   questionObj.forEach((q) => {
     quizTitle.innerText = q.question;
 
-
-
-    console.log(q.ID);
-    console.log(q.question);
-
-    q.answerOptions.forEach((qo) => {
-      let eachQoption = document.createElement("button");
-      eachQoption.innerText = qo;
-      qOptions.innerText = eachQoption;
-      console.log(eachQoption);
-    });
-
-    console.log(q.correctAnswer);
   });
 }
 
