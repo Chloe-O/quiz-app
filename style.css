@@ -29,6 +29,17 @@ h1 {
         }
     }
 
+    #qOptions {
+        display: none;
+    }
+
     
 }
 
+.disabled {
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.2;
+
+ 
+}

@@ -52,7 +52,7 @@ const questionObj = [
 ];
 
 const quizNavBtn = document.getElementById("qNavigationBtn");
-const answerContainer = document.getElementById("qOptions");
+const answerBtnsContainer = document.getElementById("qOptions");
 const quizTitle = document.getElementById("qTitle");
 const questionID = document.getElementById("qID");
 const quizScore = document.getElementById("qScore");
@@ -73,4 +73,11 @@ function iterateQuestions() {
   });
 }
 
-iterateQuestions();
+function startQuiz() {
+  quizNavBtn.innerText = "Submit Answer";
+  quizNavBtn.classList.add("disabled");
+  answerBtnsContainer.style.display = "block";
+  iterateQuestions();
+}
+
+quizNavBtn.addEventListener("click", startQuiz);
