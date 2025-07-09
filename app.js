@@ -59,18 +59,18 @@ const quizScore = document.getElementById("qScore");
 const optionBtns = document.querySelectorAll(".option-btn");
 
 let score = 0;
+let questionIndex = 0;
 
 quizScore.innerText = score;
 
 function iterateQuestions() {
-  questionObj.forEach((q) => {
-    quizTitle.innerText = q.question;
-
-    // e.g. select the first button and answer option at the same time, so each has the same index. We take the button at index [0] and make its innerText the item in the array at the same index [0], the loop continues until we reach the end of the optionBtn array
-    optionBtns.forEach((btn, answer) => {
-      btn.innerText = q.answerOptions[answer];
-    });
+  quizTitle.innerText = questionObj[questionIndex].question;
+  let ansOptions = questionObj[questionIndex].answerOptions;
+  optionBtns.forEach((x, index) => {
+    x.innerText = ansOptions[index];
   });
+  questionIndex++;
+  console.log(questionIndex);
 }
 
 function startQuiz() {
@@ -78,6 +78,12 @@ function startQuiz() {
   quizNavBtn.classList.add("disabled");
   answerBtnsContainer.style.display = "block";
   iterateQuestions();
+}
+
+function selectAnswer() {
+  optionBtns.forEach((ans, index) => {
+    console.log(ans);
+  });
 }
 
 quizNavBtn.addEventListener("click", startQuiz);
