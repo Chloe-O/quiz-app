@@ -9,23 +9,23 @@
   <body>
     <h1>Quiz App</h1>
     <div class="wrapper">
-        <div id="qStats">
-            <span id="qID">0</span>
-            <span id="qScore">0</span>
+      <div id="qStats">
+        <span id="qScore">0</span>
+      </div>
+      <div id="qContainer">
+        <h2 id="qTitle">Welcome, press start to begin our quiz!</h2>
+        <h3 id="q"></h3>
+        <div id="qOptions">
+          <button class="option-btn">Option 1</button>
+          <button class="option-btn">Option 2</button>
+          <button class="option-btn">Option 3</button>
+          <button class="option-btn">Option 4</button>
         </div>
-        <div id="qContainer">
-            <h2 id="qTitle">Welcome, press start to begin our quiz!</h2>
-            <h3 id="q"></h3>
-            <div id="qOptions">
-                <button class="option-btn">Option 1</button>
-                <button class="option-btn">Option 2</button>
-                <button class="option-btn">Option 3</button>
-                <button class="option-btn">Option 4</button>
-            </div>
-            <div id="qNavigation">
-                <button id="qNavigationBtn">Start</button>
-            </div>
+        <div id="quizMessage"></div>
+        <div id="qNavigation">
+          <button id="qNavigationBtn">Start</button>
         </div>
+      </div>
     </div>
     <script src="/app.js"></script>
   </body>
