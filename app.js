@@ -70,7 +70,7 @@ function iterateQuestions() {
     x.innerText = ansOptions[index];
   });
   questionIndex++;
-  console.log(questionIndex);
+  selectAnswer();
 }
 
 function startQuiz() {
@@ -82,7 +82,18 @@ function startQuiz() {
 
 function selectAnswer() {
   optionBtns.forEach((ans, index) => {
-    console.log(ans);
+    ans.addEventListener("click", (e) => {
+      let correctAnswer = questionObj[index].correctAnswer;
+      if (e.target.innerText == correctAnswer) {
+        console.log(
+          `Yay! You're correct, the right answer is ${correctAnswer}`
+        );
+      } else {
+        console.log(
+          `Not quite, ${e.target.innerText} is not the right answer!`
+        );
+      }
+    });
   });
 }
 
