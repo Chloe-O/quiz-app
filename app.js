@@ -63,15 +63,16 @@ quizScore.innerText = score;
 
 function updateScore() {
   score++;
+  questionIndex++;
   quizScore.innerText = score;
 }
 
-function selectAnswer() {
-  let correct = questionObj[questionIndex].correctAnswer;
+function selectAnswer(correct) {
   optionBtns.forEach((ans) => {
     ans.addEventListener("click", (e) => {
-      console.log(correct);
       if (e.target.innerText == correct) {
+        console.log(e.target.innerText);
+        console.log(correct);
         correctAnswerClicked(e);
         updateScore();
         resetQuestion(e);
@@ -91,6 +92,7 @@ function correctAnswerClicked(e) {
   e.target.style.background = "green";
   answerBtnsContainer.style.opacity = "0.5";
   answerBtnsContainer.style.pointerEvents = "none";
+  //   questionIndex++;
 }
 
 // How to 'reset' question??
@@ -105,11 +107,11 @@ function resetQuestion(e) {
 function iterateQuestions() {
   quizTitle.innerText = questionObj[questionIndex].question;
   let ansOptions = questionObj[questionIndex].answerOptions;
+  let correct = questionObj[questionIndex].correctAnswer;
   optionBtns.forEach((x, index) => {
     x.innerText = ansOptions[index];
   });
-  selectAnswer();
-  questionIndex++;
+  selectAnswer(correct);
 }
 
 function startQuiz() {
